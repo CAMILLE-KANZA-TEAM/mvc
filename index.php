@@ -10,9 +10,9 @@ require APP_DIRECTORY . 'vendor/autoload.php';
 
 
 // todo : A charger dans un autoloader plus tard
-require APP_DIRECTORY . 'Controllers/BaseController.php';
-require APP_DIRECTORY . 'Controllers/IndexController.php';
-require APP_DIRECTORY . 'Controllers/PostsController.php';
+require APP_DIRECTORY . 'controllers/BaseController.php';
+require APP_DIRECTORY . 'controllers/IndexController.php';
+require APP_DIRECTORY . 'controllers/PostsController.php';
 
 
 // on défini nos routes ici
