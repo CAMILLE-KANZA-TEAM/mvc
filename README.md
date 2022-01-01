@@ -10,9 +10,22 @@
 
 
 
-## Installation du projet
+## Installation du projet :
 
 Lancer la commande **composer update**
+
+
+
+
+## Librairies utilisées :
+
+- Pour la gestion des routes : **nikic/fast-route** https://github.com/nikic/FastRoute
+- Pour les vues : **twig/twig** https://twig.symfony.com/doc/3.x/
+
+
+
+
+
 
 
 
