@@ -1,4 +1,6 @@
-# Squelette projet MVC OCR
+## Squelette projet MVC OCR
+
+
 
 
 ## Installation
@@ -6,9 +8,11 @@
 - MySql 5
 - Apache 2.*
 
+
+
 ## Installation du projet
-L'installation du projet se fait via composer.
-- Lancer la commande **composer update**
+
+Lancer la commande **composer update**
 
 
 
