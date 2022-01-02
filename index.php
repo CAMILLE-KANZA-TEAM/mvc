@@ -2,10 +2,7 @@
 
 define('APP_DIRECTORY', __DIR__ . '/');
 
-
-
 require APP_DIRECTORY . 'vendor/autoload.php';
-
 
 
 
@@ -13,6 +10,8 @@ require APP_DIRECTORY . 'vendor/autoload.php';
 require APP_DIRECTORY . 'controllers/BaseController.php';
 require APP_DIRECTORY . 'controllers/IndexController.php';
 require APP_DIRECTORY . 'controllers/PostsController.php';
+
+
 
 
 // on défini nos routes ici
@@ -39,6 +38,8 @@ if (false !== $pos = strpos($uri, '?')) {
 }
 $uri = rawurldecode($uri);
 
+
+
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
@@ -61,6 +62,7 @@ switch ($routeInfo[0]) {
 
         // on appelle automatique notre controlleur, avec la bonne méthode et les bons paramètres donnés à notre fonction
         // Exemple pour la syntaxe "IndexController::class . '/index'", voici ce qui sera appelé : "IndexController->index()"
+
         call_user_func_array(array(new $class, $method), $vars);
         break;
 }
