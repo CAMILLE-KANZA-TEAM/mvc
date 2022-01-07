@@ -14,21 +14,34 @@ class PostsController extends BaseController {
    	}
 
 	// Page d'accueil
-	public function index($params=array()) {
+	public function listing($params=array()) {
+
+        $postInstance = new Posts();//
+        $listPosts = $postInstance->getPosts();
+
 		// on choisi la template à appeler
-		$template = $this->twig->load('posts/index.html');
+		$template = $this->twig->load('posts/listing.html');
 
 		// Puis on affiche avec la méthode render
-		echo $template->render([]);
+		echo $template->render([
+            'resPosts' => $listPosts,
+            'title'    => 'Page listing'
+        ]);
 	}
 
 	public function detail($id) {
 
+        $postInstance = new Posts();//
+        $detailPost = $postInstance->getPostsById($id);
+
 		// on choisi la template à appeler
-		$template = $this->twig->load('posts/index.html');
+		$template = $this->twig->load('posts/detail.html');
 
 		// Puis on affiche avec la méthode render
-		echo $template->render([]);
+		echo $template->render([
+            'post' => $detailPost,
+            'title'    => 'Détail du post'
+        ]);
 	}
 
 }
