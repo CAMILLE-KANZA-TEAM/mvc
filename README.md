@@ -12,7 +12,8 @@
 
 ## Installation du projet :
 
-Lancer la commande **composer update**
+1°) Lancer la commande **composer update**
+2°) php -S localhost:8000 -t public index.php
 
 
 
