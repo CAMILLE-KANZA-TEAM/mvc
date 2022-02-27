@@ -1,17 +1,14 @@
 <?php
+error_reporting(E_ALL);
 
 define('APP_DIRECTORY', __DIR__ . '/');
 
+
+// autoloader de nos classes
+require 'autoloader.php';
+
+// autoloader des librairies incluses via composer
 require APP_DIRECTORY . 'vendor/autoload.php';
-
-
-
-// todo : A charger dans un autoloader plus tard
-require APP_DIRECTORY . 'controllers/BaseController.php';
-require APP_DIRECTORY . 'controllers/IndexController.php';
-require APP_DIRECTORY . 'controllers/PostsController.php';
-
-
 
 
 // on défini nos routes ici
@@ -19,13 +16,17 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 
     // page d'accueil
     $r->addRoute('GET', '/', IndexController::class . '/index');
-
     // Page des posts
     $r->addRoute('GET', '/posts/', PostsController::class . '/index');
 
     // Page détail d'un post
     $r->addRoute('GET', '/posts/{id:\d+}', PostsController::class . '/detail');
 });
+
+
+
+
+
 
 // Fetch method and URI from somewhere
 $httpMethod = $_SERVER['REQUEST_METHOD'];
