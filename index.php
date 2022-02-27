@@ -11,7 +11,6 @@ require 'autoloader.php';
 require APP_DIRECTORY . 'vendor/autoload.php';
 
 
-
 // on défini nos routes ici
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 
